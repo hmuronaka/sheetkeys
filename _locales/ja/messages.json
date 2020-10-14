@@ -1,0 +1,77 @@
+{
+  "MenuItemsCopy": {    
+    "message": "^コピー\\("
+  },
+  "MenuItemsDeleteRow": {    
+    "message": "^行\\s+\\d+\\s+を削除"
+  },
+  "MenuItemsDeleteColumn": {    
+    "message": "^列\\s+\\w+\\s+を削除"
+  },
+  "MenuItemsDeleteValues": {    
+    "message": "値を削除"
+  },
+  "MenuItemsRowAbove": {    
+    "message": "上に 1 行"
+  },
+  "MenuItemsRowBelow": {    
+    "message": "下に 1 行"
+  },
+  "MenuItemsFreeze": {    
+    "message": "固定"
+  },
+  "MenuItemsUpToCurrentRow": {    
+    "message": "^現在の行（\\d+）まで"
+  },
+  "MenuItemsUpToCurrentColumn": {    
+    "message": "^現在の列（\\w+）まで"
+  },
+  "MenuItemsMoveRowUp": {    
+    "message": "行を上に移動"
+  },
+  "MenuItemsMoveRowDown": {    
+    "message": "行を下に移動"
+  },
+  "MenuItemsMoveRowsUp": {    
+    "message": "複数の行を上に移動"
+  },
+  "MenuItemsMoveRowsDown": {    
+    "message": "複数の行を下に移動"
+  },
+  "MenuItemsMoveColumnLeft": {    
+    "message": "列を左に移動"
+  },
+  "MenuItemsMoveColumnRight": {    
+    "message": "列を右に移動"
+  },
+  "MenuItemsMoveColumnsLeft": {    
+    "message": "列を左に移動"
+  },
+  "MenuItemsMoveColumnsRight": {    
+    "message": "列を右に移動"
+  },
+  "MenuItemsPaste": {    
+    "message": "貼り付け"
+  },
+  "MenuItemsUndo": {    
+    "message": "元に戻す"
+  },
+  "MenuItemsRedo": {    
+    "message": "やり直し"
+  },
+  "MenuItemsFullScreen": {    
+    "message": "全画面"
+  },
+  "MenuItemsMergeAll": {    
+    "message": "すべて結合"
+  },
+  "MenuItemsMergeHorizontally": {    
+    "message": "横方向に結合"
+  },
+  "MenuItemsMergeVertically": {    
+    "message": "縦方向に結合"
+  },
+  "MenuItemsUnmerge": {    
+    "message": "結合を解除"
+  }
+}

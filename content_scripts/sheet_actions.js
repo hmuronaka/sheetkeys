@@ -1,33 +1,33 @@
 SheetActions = {
   menuItems: {
-    copy: "Copy",
+    copy: chrome.i18n.getMessage("MenuItemsCopy"),
     // This string with a space at the end is meant to match the button "Delete row X" where x is some number.
     // There is also a "Delete rows/columns" button which we do not want to match.
-    deleteRow: "Delete row ",
-    deleteColumn: "Delete column ",
-    deleteValues: "Delete values",
-    rowAbove: "Row above",
-    rowBelow: "Row below",
-    freeze: "Freeze", // Clicking this creates a sub-menu.
-    freezeRow: "Up to current row", // This is a sub-item of the "Freeze" menu.
-    freezeColumn: "Up to current column", // This is a sub-item of the "Freeze" menu.
+    deleteRow: chrome.i18n.getMessage("MenuItemsDeleteRow"),
+    deleteColumn: chrome.i18n.getMessage("MenuItemsDeleteColumn"),
+    deleteValues: chrome.i18n.getMessage("MenuItemsDeleteValues"),
+    rowAbove: chrome.i18n.getMessage("MenuItemsRowAbove"),
+    rowBelow: chrome.i18n.getMessage("MenuItemsRowBelow"),
+    freeze: chrome.i18n.getMessage("MenuItemsFreeze"),
+    freezeRow: chrome.i18n.getMessage("MenuItemsUpToCurrentRow"),
+    freezeColumn: chrome.i18n.getMessage("MenuItemsUpToCurrentColumn"),
     // The "moveRowUp" menu item won't yet exist if multiple rows are selected.
-    moveRowUp: "Move row up",
-    moveRowDown: "Move row down",
-    moveRowsUp: "Move rows up",
-    moveRowsDown: "Move rows down",
-    moveColumnLeft: "Move column left",
-    moveColumnRight: "Move column right",
-    moveColumnsLeft: "Move columns left",
-    moveColumnsRight: "Move columns right",
-    paste: "Paste",
-    undo: "Undo",
-    redo: "Redo",
-    fullScreen: "Full screen",
-    mergeAll: "Merge all",
-    mergeHorizontally: "Merge horizontally",
-    mergeVertically: "Merge vertically",
-    unmerge: "Unmerge"
+    moveRowUp: chrome.i18n.getMessage("MenuItemsMoveRowUp"),
+    moveRowDown: chrome.i18n.getMessage("MenuItemsMoveRowDown"),
+    moveRowsUp: chrome.i18n.getMessage("MenuItemsMoveRowsUp"),
+    moveRowsDown: chrome.i18n.getMessage("MenuItemsMoveRowsDown"),
+    moveColumnLeft: chrome.i18n.getMessage("MenuItemsMoveColumnLeft"),
+    moveColumnRight: chrome.i18n.getMessage("MenuItemsMoveColumnRight"),
+    moveColumnsLeft: chrome.i18n.getMessage("MenuItemsMoveColumnsLeft"),
+    moveColumnsRight: chrome.i18n.getMessage("MenuItemsMoveColumnsRight"),
+    paste: chrome.i18n.getMessage("MenuItemsPaste"),
+    undo: chrome.i18n.getMessage("MenuItemsUndo"),
+    redo: chrome.i18n.getMessage("MenuItemsRedo"),
+    fullScreen: chrome.i18n.getMessage("MenuItemsFullScreen"),
+    mergeAll: chrome.i18n.getMessage("MenuItemsMergeAll"),
+    mergeHorizontally: chrome.i18n.getMessage("MenuItemsMergeHorizontally"),
+    mergeVertically: chrome.i18n.getMessage("MenuItemsMergeVertically"),
+    unmerge: chrome.i18n.getMessage("MenuItemsUnmerge"),
   },
 
   buttons: {
@@ -82,9 +82,10 @@ SheetActions = {
 
   findMenuItem(caption) {
     const menuItems = document.querySelectorAll(".goog-menuitem");
+    const regexp = new RegExp(caption);
     for (let menuItem of Array.from(menuItems)) {
       const label = menuItem.innerText;
-      if (label && label.indexOf(caption) === 0) {
+      if( label && label.search(regexp) === 0 ) {
         return menuItem;
       }
     }
