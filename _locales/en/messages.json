@@ -73,6 +73,30 @@
   },
   "MenuItemsUnmerge": {    
     "message": "Unmerge"
+  },
+  "ButtonsHorizontalAlign": {
+    "message": "Horizontal align"
+  },
+  "ButtonsTextWrapping": {
+    "message": "Text wrapping"
+  },
+  "Center": {
+    "message": "Center"
+  },
+  "Clip": {
+    "message": "Clip"
+  },
+  "Left": {
+    "message": "Left"
+  },
+  "Right": {
+    "message": "Right"
+  },
+  "Overflow": {
+    "message": "Overflow"
+  },
+  "Wrap": {
+    "message": "Wrap"
   }
 }
 

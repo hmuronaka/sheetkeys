@@ -31,12 +31,12 @@ SheetActions = {
   },
 
   buttons: {
-    center: ["Horizontal align", "Center"],
-    clip: ["Text wrapping", "Clip"],
-    left: ["Horizontal align", "Left"],
-    right: ["Horizontal align", "Right"],
-    overflow: ["Text wrapping", "Overflow"],
-    wrap: ["Text wrapping", "Wrap"]
+    center: [chrome.i18n.getMessage("ButtonsHorizontalAlign"), chrome.i18n.getMessage("Center")],
+    clip: [chrome.i18n.getMessage("ButtonsTextWrapping"), chrome.i18n.getMessage("Clip")],
+    left: [chrome.i18n.getMessage("ButtonsHorizontalAlign"), chrome.i18n.getMessage("Left")],
+    right: [chrome.i18n.getMessage("ButtonsHorizontalAlign"), chrome.i18n.getMessage("Right")],
+    overflow: [chrome.i18n.getMessage("ButtonsTextWrapping"), chrome.i18n.getMessage("Overflow")],
+    wrap: [chrome.i18n.getMessage("ButtonsTextWrapping"), chrome.i18n.getMessage("Wrap")]
   },
 
   // You can find the names of these color swatches by hoverig over the swatches and seeing the tooltip.

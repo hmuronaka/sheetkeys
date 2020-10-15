@@ -73,5 +73,30 @@
   },
   "MenuItemsUnmerge": {    
     "message": "結合を解除"
+  },
+  "ButtonsHorizontalAlign": {
+    "message": "水平方向の配置"
+  },
+  "ButtonsTextWrapping": {
+    "message": "テキストを折り返す"
+  },
+  "Center": {
+    "message": "中央"
+  },
+  "Clip": {
+    "message": "切り詰める"
+  },
+  "Left": {
+    "message": "左"
+  },
+  "Right": {
+    "message": "右"
+  },
+  "Overflow": {
+    "message": "はみ出す"
+  },
+  "Wrap": {
+    "message": "折り返す"
   }
+
 }
