@@ -80,6 +80,12 @@
   "ButtonsTextWrapping": {
     "message": "Text wrapping"
   },
+  "ButtonsFillColor": {
+    "message": "Fill color"
+  },
+  "ButtonsTextColor": {
+    "message": "Text color"
+  },
   "Center": {
     "message": "Center"
   },
@@ -97,6 +103,27 @@
   },
   "Wrap": {
     "message": "Wrap"
+  },
+  "ColorWhite": {
+    "message": "white"
+  },
+  "ColorLightYellow3": {
+    "message": "light yellow 3"
+  },
+  "ColorLightCornflowerBlue3": {
+    "message": "light cornflower blue 3"
+  },
+  "ColorLightPurple3": {
+    "message": "light purple 3"
+  },
+  "ColorLightRed3": {
+    "message": "light red 3"
+  },
+  "ColorLightGray2": {
+    "message": "light gray 2"
+  },
+  "FontSize": {
+    "message": "Font size"
   }
 }
 

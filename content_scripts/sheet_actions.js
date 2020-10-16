@@ -41,12 +41,12 @@ SheetActions = {
 
   // You can find the names of these color swatches by hoverig over the swatches and seeing the tooltip.
   colors: {
-    white: "white",
-    lightYellow3: "light yellow 3",
-    lightCornflowBlue3: "light cornflower blue 3",
-    lightPurple3: "light purple 3",
-    lightRed3: "light red 3",
-    lightGray2: "light gray 2"
+    white: chrome.i18n.getMessage("ColorWhite"),
+    lightYellow3: chrome.i18n.getMessage("ColorLightYellow3"),
+    lightCornflowBlue3: chrome.i18n.getMessage("ColorLightCornflowerBlue3"),
+    lightPurple3: chrome.i18n.getMessage("ColorLightPurple3"),
+    lightRed3: chrome.i18n.getMessage("ColorLightRed3"),
+    lightGray2: chrome.i18n.getMessage("ColorLightGray2")
   },
 
   // A mapping of button-caption to DOM element.
@@ -99,7 +99,7 @@ SheetActions = {
     // First we must open the palette; only then can we reliably get the color button that pertains to that
     // color palette.
     const paletteButton = document.querySelector(
-      (type == "cell") ? "*[aria-label='Fill color']": "*[aria-label='Text color']");
+      (type == "cell") ? `*[aria-label='${chrome.i18n.getMessage("ButtonsFillColor")}']`: `*[aria-label='${chrome.i18n.getMessage("ButtonsTextColor")}']`);
     KeyboardUtils.simulateClick(paletteButton);
 
     const rect = paletteButton.getBoundingClientRect();
@@ -450,19 +450,19 @@ SheetActions = {
   // implement increaes font / decrease font commands.
   getFontSizeMenu() { return this.getMenuItem("6").parentNode; },
   activateFontSizeMenu() {
-     KeyboardUtils.simulateClick(this.getMenuItem("Font size"));
+     KeyboardUtils.simulateClick(this.getMenuItem(chrome.i18n.getMessage("FontSize")));
      // It's been shown; hide it again.
      this.getFontSizeMenu().style.display = "none";
    },
 
   setFontSize10() {
     this.activateFontSizeMenu();
-    KeyboardUtils.simulateClick(this.getMenuItem("10"));
+    KeyboardUtils.simulateClick(this.getMenuItem("^10$"));
   },
 
   setFontSize8() {
     this.activateFontSizeMenu();
-    KeyboardUtils.simulateClick(this.getMenuItem("8"));
+    KeyboardUtils.simulateClick(this.getMenuItem("^8$"));
   },
 
   wrap() { this.clickToolbarButton(this.buttons.wrap); },

@@ -6,8 +6,8 @@
     "message": "^行\\s+\\d+\\s+を削除"
   },
   "MenuItemsDeleteColumn": {    
-    "message": "^列\\s+\\w+\\s+を削除"
-  },
+    "message": "^列\\s+\\w+\\s+を削除" 
+  }, 
   "MenuItemsDeleteValues": {    
     "message": "値を削除"
   },
@@ -80,6 +80,12 @@
   "ButtonsTextWrapping": {
     "message": "テキストを折り返す"
   },
+  "ButtonsFillColor": {
+    "message": "塗りつぶしの色"
+  },
+  "ButtonsTextColor": {
+    "message": "テキストの色"
+  },
   "Center": {
     "message": "中央"
   },
@@ -97,6 +103,27 @@
   },
   "Wrap": {
     "message": "折り返す"
+  },
+  "ColorWhite": {
+    "message": "白"
+  },
+  "ColorLightYellow3": {
+    "message": "明るい黄 3"
+  },
+  "ColorLightCornflowerBlue3": {
+    "message": "明るいコーンフラワー ブルー 3"
+  },
+  "ColorLightPurple3": {
+    "message": "明るい紫 3"
+  },
+  "ColorLightRed3": {
+    "message": "明るい赤 3"
+  },
+  "ColorLightGray2": {
+    "message": "明るいグレー 2"
+  },
+  "FontSize": {
+    "message": "フォント サイズ"
   }
 
 }
