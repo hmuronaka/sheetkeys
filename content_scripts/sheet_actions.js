@@ -1,61 +1,62 @@
 SheetActions = {
   menuItems: {
-    copy: chrome.i18n.getMessage("MenuItemsCopy"),
+    copy: "MenuItemsCopy",
     // This string with a space at the end is meant to match the button "Delete row X" where x is some number.
     // There is also a "Delete rows/columns" button which we do not want to match.
-    deleteRow: chrome.i18n.getMessage("MenuItemsDeleteRow"),
-    deleteColumn: chrome.i18n.getMessage("MenuItemsDeleteColumn"),
-    deleteValues: chrome.i18n.getMessage("MenuItemsDeleteValues"),
-    rowAbove: chrome.i18n.getMessage("MenuItemsRowAbove"),
-    rowBelow: chrome.i18n.getMessage("MenuItemsRowBelow"),
-    freeze: chrome.i18n.getMessage("MenuItemsFreeze"),
-    freezeRow: chrome.i18n.getMessage("MenuItemsUpToCurrentRow"),
-    freezeColumn: chrome.i18n.getMessage("MenuItemsUpToCurrentColumn"),
+    deleteRow: "MenuItemsDeleteRow",
+    deleteColumn: "MenuItemsDeleteColumn",
+    deleteValues: "MenuItemsDeleteValues",
+    rowAbove: "MenuItemsRowAbove",
+    rowBelow: "MenuItemsRowBelow",
+    freeze: "MenuItemsFreeze",
+    freezeRow: "MenuItemsUpToCurrentRow",
+    freezeColumn: "MenuItemsUpToCurrentColumn",
     // The "moveRowUp" menu item won't yet exist if multiple rows are selected.
-    moveRowUp: chrome.i18n.getMessage("MenuItemsMoveRowUp"),
-    moveRowDown: chrome.i18n.getMessage("MenuItemsMoveRowDown"),
-    moveRowsUp: chrome.i18n.getMessage("MenuItemsMoveRowsUp"),
-    moveRowsDown: chrome.i18n.getMessage("MenuItemsMoveRowsDown"),
-    moveColumnLeft: chrome.i18n.getMessage("MenuItemsMoveColumnLeft"),
-    moveColumnRight: chrome.i18n.getMessage("MenuItemsMoveColumnRight"),
-    moveColumnsLeft: chrome.i18n.getMessage("MenuItemsMoveColumnsLeft"),
-    moveColumnsRight: chrome.i18n.getMessage("MenuItemsMoveColumnsRight"),
-    paste: chrome.i18n.getMessage("MenuItemsPaste"),
-    undo: chrome.i18n.getMessage("MenuItemsUndo"),
-    redo: chrome.i18n.getMessage("MenuItemsRedo"),
-    fullScreen: chrome.i18n.getMessage("MenuItemsFullScreen"),
-    mergeAll: chrome.i18n.getMessage("MenuItemsMergeAll"),
-    mergeHorizontally: chrome.i18n.getMessage("MenuItemsMergeHorizontally"),
-    mergeVertically: chrome.i18n.getMessage("MenuItemsMergeVertically"),
-    unmerge: chrome.i18n.getMessage("MenuItemsUnmerge"),
+    moveRowUp: "MenuItemsMoveRowUp",
+    moveRowDown: "MenuItemsMoveRowDown",
+    moveRowsUp: "MenuItemsMoveRowsUp",
+    moveRowsDown: "MenuItemsMoveRowsDown",
+    moveColumnLeft: "MenuItemsMoveColumnLeft",
+    moveColumnRight: "MenuItemsMoveColumnRight",
+    moveColumnsLeft: "MenuItemsMoveColumnsLeft",
+    moveColumnsRight: "MenuItemsMoveColumnsRight",
+    paste: "MenuItemsPaste",
+    undo: "MenuItemsUndo",
+    redo: "MenuItemsRedo",
+    fullScreen: "MenuItemsFullScreen",
+    mergeAll: "MenuItemsMergeAll",
+    mergeHorizontally: "MenuItemsMergeHorizontally",
+    mergeVertically: "MenuItemsMergeVertically",
+    unmerge: "MenuItemsUnmerge",
   },
 
   buttons: {
-    center: [chrome.i18n.getMessage("ButtonsHorizontalAlign"), chrome.i18n.getMessage("Center")],
-    clip: [chrome.i18n.getMessage("ButtonsTextWrapping"), chrome.i18n.getMessage("Clip")],
-    left: [chrome.i18n.getMessage("ButtonsHorizontalAlign"), chrome.i18n.getMessage("Left")],
-    right: [chrome.i18n.getMessage("ButtonsHorizontalAlign"), chrome.i18n.getMessage("Right")],
-    overflow: [chrome.i18n.getMessage("ButtonsTextWrapping"), chrome.i18n.getMessage("Overflow")],
-    wrap: [chrome.i18n.getMessage("ButtonsTextWrapping"), chrome.i18n.getMessage("Wrap")]
+    center: ["ButtonsHorizontalAlign", "Center"],
+    clip: ["ButtonsTextWrapping", "Clip"],
+    left: ["ButtonsHorizontalAlign", "Left"],
+    right: ["ButtonsHorizontalAlign", "Right"],
+    overflow: ["ButtonsTextWrapping", "Overflow"],
+    wrap: ["ButtonsTextWrapping", "Wrap"]
   },
 
   // You can find the names of these color swatches by hoverig over the swatches and seeing the tooltip.
   colors: {
-    white: chrome.i18n.getMessage("ColorWhite"),
-    lightYellow3: chrome.i18n.getMessage("ColorLightYellow3"),
-    lightCornflowBlue3: chrome.i18n.getMessage("ColorLightCornflowerBlue3"),
-    lightPurple3: chrome.i18n.getMessage("ColorLightPurple3"),
-    lightRed3: chrome.i18n.getMessage("ColorLightRed3"),
-    lightGray2: chrome.i18n.getMessage("ColorLightGray2")
+    white: "ColorWhite",
+    lightYellow3: "ColorLightYellow3",
+    lightCornflowBlue3: "ColorLightCornflowerBlue3",
+    lightPurple3: "ColorLightPurple3",
+    lightRed3: "ColorLightRed3",
+    lightGray2: "ColorLightGray2"
   },
 
   // A mapping of button-caption to DOM element.
   menuItemElements: {},
-
+  
   clickToolbarButton(captionList) {
     // Sometimes a toolbar button won't exist in the DOM until its parent has been clicked, so we click all of
     // its parents in sequence.
-    for (let caption of Array.from(captionList)) {
+    for (let captionOrI18nMessage of Array.from(captionList)) {
+      const caption = chrome.i18n.getMessage(captionOrI18nMessage);
       const el = document.querySelector(`*[aria-label='${caption}']`);
       if (!el) {
         console.log(`Couldn't find the element for the button labeled ${caption}.`);
@@ -68,7 +69,8 @@ SheetActions = {
 
   // Returns the DOM element of the menu item with the given caption. Prints a warning if a menu item isn't
   // found (since this is a common source of errors in SheetKeys) unless silenceWarning = true.
-  getMenuItem(caption, silenceWarning) {
+  getMenuItem(captionOrI18nMessage, silenceWarning) {
+    const caption = chrome.i18n.getMessage(captionOrI18nMessage);
     if (silenceWarning == null) { silenceWarning = false; }
     let item = this.menuItemElements[caption];
     if (item) { return item; }
@@ -95,7 +97,8 @@ SheetActions = {
   // Returns the color palette button corresponding to the given color name.
   // type: either "font" or "cell", depending on which color you want to change.
   // Note that the availability and use of the color palette buttons is a bit finicky.
-  getColorButton(color, type) {
+  getColorButton(colorOrI18nMessageKey, type) {
+    const color = chrome.i18n.getMessage(colorOrI18nMessageKey);
     // First we must open the palette; only then can we reliably get the color button that pertains to that
     // color palette.
     const paletteButton = document.querySelector(
